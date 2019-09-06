@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "on",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "editor.insertSpaces": true
+}

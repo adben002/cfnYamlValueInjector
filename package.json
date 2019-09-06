@@ -1,0 +1,90 @@
+{
+  "name": "@adben002/cfn-yaml-value-injector",
+  "version": "0.7.8",
+  "description": "Cloudformation yaml value injector",
+  "main": "dist/index.js",
+  "typings": "dist/build/index.d.ts",
+  "scripts": {
+    "build": "webpack || echo not ok",
+    "test": "jest",
+    "coverage": "npm run test -- --coverage",
+    "release": "npm run coverage && npm run build && standard-version && npm pack"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/",
+      "/src/main/index.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/main/*.{js,jsx,ts,tsx}"
+    ],
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adben002/cfnYamlValueInjector.git"
+  },
+  "keywords": [
+    "cloudformation",
+    "yaml",
+    "yml",
+    "aws",
+    "value",
+    "injector",
+    "override",
+    "mappings"
+  ],
+  "author": "Adam Bennett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adben002/cfnYamlValueInjector/issues"
+  },
+  "bin": {
+    "cfn-yaml-value-injector": "dist/index.js"
+  },
+  "homepage": "https://github.com/adben002/cfnYamlValueInjector/issues#readme",
+  "dependencies": {
+    "yaml-cfn": "^0.2.0",
+    "yargs": "^11.0.0",
+    "immutable-typescript": "^1.1.4",
+    "deepmerge": "^2.1.0",
+    "@types/deepmerge": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
+    "@types/yargs": "^11.0.0",
+    "browserify": "^16.2.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "delete-empty": "^2.0.0",
+    "dts-bundle": "^0.7.3",
+    "istanbul": "^0.4.5",
+    "jest": "^22.4.3",
+    "jshint": "^2.9.5",
+    "mocha": "^5.1.1",
+    "standard-version": "^4.3.0",
+    "ts-jest": "^22.4.5",
+    "ts-loader": "^4.2.0",
+    "tslint": "^5.9.1",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-node-externals": "^1.7.2",
+    "tslint-config-prettier": "^1.12.0",
+    "tslint-immutable": "^4.5.4",
+    "npx": "^10.2.0",
+    "path": "^0.12.7"
+  }
+}

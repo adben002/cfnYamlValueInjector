@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - stable
+
+script:
+  - npm install
+  - npm run build
+  - npm run coverage
+  - rm -rf node_modules && npm install --only=production
+  - node dist/index.js --input=src/__tests__/resources/pipeline.yaml --output=src/__tests__/resources/integration_output.yaml --param.Mappings.InstanceValues.someKey=somevalue
+  - cmp src/__tests__/resources/integration_output.yaml src/__tests__/resources/expected.yaml || exit 1
+  - npm install
+
+after_script:
+  - npx coveralls --verbose < coverage/lcov.info
